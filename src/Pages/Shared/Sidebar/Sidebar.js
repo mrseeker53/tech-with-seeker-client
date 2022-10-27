@@ -9,7 +9,7 @@ const Sidebar = () => {
 
     // // Declare useEffect to load data for non route element
     useEffect(() => {
-        fetch('http://localhost:5000/courses')
+        fetch('https://tech-with-seeker-server.vercel.app/courses')
             .then(res => res.json())
             .then(data => setCourses(data));
     }, [])

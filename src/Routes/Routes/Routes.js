@@ -18,11 +18,13 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/courses',
-                element: <Courses></Courses>
+                element: <Courses></Courses>,
+                loader: () => fetch('https://tech-with-seeker-server.vercel.app/courses')
             },
             {
                 path: '/course/:id',
-                element: <Course></Course>
+                element: <Course></Course>,
+                loader: ({ params }) => fetch(`https://tech-with-seeker-server.vercel.app/course/${params.id}`)
             },
             {
                 path: '/faq',
