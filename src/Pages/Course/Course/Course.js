@@ -4,6 +4,10 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import Pdf from "react-to-pdf";
+import { useState } from 'react';
+
+const ref = React.createRef();
 
 const Course = ({ course }) => {
     // destructure course
@@ -11,6 +15,12 @@ const Course = ({ course }) => {
 
     return (
         <div>
+            <Pdf targetRef={ref} filename="code-example.pdf">
+                {({ toPdf }) => <button className="my-4" onClick={toPdf}>Generate Pdf</button>}
+            </Pdf>
+            <div ref={ref}>
+                <p>{description}</p>
+            </div>
             <Row className="mb-5">
                 <Col md={8}>
                     <Card>
@@ -22,7 +32,7 @@ const Course = ({ course }) => {
                             <Card.Text>
                                 {description}
                             </Card.Text>
-                            <Link >
+                            <Link to={`/course/${course.id}`}>
                                 <Button variant="primary">Enroll Now</Button>
                             </Link>
                         </Card.Body>
