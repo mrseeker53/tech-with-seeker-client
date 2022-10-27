@@ -4,6 +4,7 @@ import Blog from "../../Pages/Blog/Blog/Blog";
 import Home from "../../Pages/Home/Home/Home"
 import Courses from "../../Pages/Courses/Courses/Courses"
 import FAQ from "../../Pages/FAQ/FAQ/FAQ"
+import Course from "../../Pages/Course/Course/Course";
 
 // Create & export router as routes
 export const routes = createBrowserRouter([
@@ -18,6 +19,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/courses',
                 element: <Courses></Courses>
+            },
+            {
+                path: '/course/:id',
+                element: <Course></Course>
             },
             {
                 path: '/faq',
