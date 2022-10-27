@@ -7,10 +7,13 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { GoogleAuthProvider, GithubAuthProvider } from 'firebase/auth';
+import { useState } from 'react';
 
 
 
 const Login = () => {
+
+    const [error, setError] = useState('');
 
     const { providerLogin } = useContext(AuthContext);
 
@@ -24,7 +27,10 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
             })
-            .catch(error => console.error(error));
+            .catch(error => {
+                console.error(error)
+                setError(error.message);
+            });
     }
 
 
@@ -52,6 +58,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                setError('');
                 navigate('/courses');
             })
             .catch(error => console.error(error));
@@ -74,7 +81,7 @@ const Login = () => {
                     Login
                 </Button>
                 <Form.Text className="text-danger">
-
+                    {error}
                 </Form.Text>
             </Form>
             <hr />

@@ -6,9 +6,12 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { GoogleAuthProvider, GithubAuthProvider } from 'firebase/auth';
+import { useState } from 'react';
 
 
 const Register = () => {
+
+    const [error, setError] = useState('');
 
     const { providerLogin, createUser } = useContext(AuthContext);
 
@@ -49,9 +52,13 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setError('');
                 form.reset();
             })
-            .catch(error => console.error(error));
+            .catch(error => {
+                console.error(error)
+                setError(error.message);
+            });
     }
 
 
@@ -82,7 +89,7 @@ const Register = () => {
                     Register
                 </Button>
                 <Form.Text className="text-danger">
-
+                    {error}
                 </Form.Text>
             </Form>
             <hr />
