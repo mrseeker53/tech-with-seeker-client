@@ -9,7 +9,7 @@ const CourseDetails = () => {
 
     return (
         <div>
-            <button>Get Premium Access</button>
+            <button to='/checkout'>Get Premium Access</button>
             <h2 className='my-4'>Course Features</h2>
             {
                 // Display course details

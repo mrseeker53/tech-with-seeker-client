@@ -7,6 +7,8 @@ import FAQ from "../../Pages/FAQ/FAQ/FAQ"
 import CourseDetails from "../../Pages/CourseDetails/CourseDetails/CourseDetails";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import CheckOut from "../../Pages/CheckOut/CheckOut/CheckOut";
 
 // Create & export router as routes
 export const routes = createBrowserRouter([
@@ -43,6 +45,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/checkout',
+                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
             }
         ]
     },
