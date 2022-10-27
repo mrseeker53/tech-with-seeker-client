@@ -4,7 +4,7 @@ import Blog from "../../Pages/Blog/Blog/Blog";
 import Home from "../../Pages/Home/Home/Home"
 import Courses from "../../Pages/Courses/Courses/Courses"
 import FAQ from "../../Pages/FAQ/FAQ/FAQ"
-import Course from "../../Pages/Course/Course/Course";
+import CourseDetails from "../../Pages/CourseDetails/CourseDetails/CourseDetails";
 
 // Create & export router as routes
 export const routes = createBrowserRouter([
@@ -23,7 +23,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/course/:id',
-                element: <Course></Course>,
+                element: <CourseDetails></CourseDetails>,
                 loader: ({ params }) => fetch(`https://tech-with-seeker-server.vercel.app/course/${params.id}`)
             },
             {

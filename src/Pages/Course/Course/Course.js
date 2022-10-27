@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 const Course = ({ course }) => {
     // destructure course
@@ -21,7 +22,9 @@ const Course = ({ course }) => {
                             <Card.Text>
                                 {description}
                             </Card.Text>
-                            <Button variant="primary">Enroll Now</Button>
+                            <Link >
+                                <Button variant="primary">Enroll Now</Button>
+                            </Link>
                         </Card.Body>
                     </Card>
                 </Col>

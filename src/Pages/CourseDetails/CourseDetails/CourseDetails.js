@@ -2,16 +2,14 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Course from '../../Course/Course/Course';
 
-const Courses = () => {
-    // Set data with useLoaderData
-    const allCourses = useLoaderData();
+const CourseDetails = () => {
+    const courseDetails = useLoaderData();
 
     return (
         <div>
-            <h2>All Courses</h2>
+            <h2>Course Features</h2>
             {
-                // Loop through Courses & send data to Course
-                allCourses.map(course => <Course
+                courseDetails.map(course => <Course
                     key={course.id}
                     course={course}
                 ></Course>)
@@ -20,4 +18,4 @@ const Courses = () => {
     );
 };
 
-export default Courses;
+export default CourseDetails;
