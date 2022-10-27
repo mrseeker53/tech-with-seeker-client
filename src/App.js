@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       {/* Set Router Provider */}
       <RouterProvider router={routes}></RouterProvider>
     </div>
