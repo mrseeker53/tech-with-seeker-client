@@ -58,8 +58,8 @@ const Login = () => {
     }
 
     return (
-        <div>
-            <Form className='w-50' onSubmit={handleSubmit}>
+        <div className='w-50'>
+            <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email</Form.Label>
                     <Form.Control name='email' type="email" placeholder="Enter email" required />
@@ -74,7 +74,7 @@ const Login = () => {
                     Login
                 </Button>
                 <Form.Text className="text-danger">
-                    
+
                 </Form.Text>
             </Form>
             <hr />
