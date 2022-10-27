@@ -2,7 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-// import NavDropdown from 'react-bootstrap/NavDropdown';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../../../images/logo.png';
 import Sidebar from '../Sidebar/Sidebar';
 
@@ -27,7 +27,11 @@ const Header = () => {
                         <Nav.Link href="#pricing">Courses</Nav.Link>
                         <Nav.Link href="#pricing">FAQ</Nav.Link>
                         <Nav.Link href="#pricing">Blog</Nav.Link>
-                        <Nav.Link href="#pricing">Theme</Nav.Link>
+                        <NavDropdown className='w-25' title="Theme" id="collapsible-nav-dropdown">
+                            <NavDropdown.Item href="#action/3.1">Light</NavDropdown.Item>
+                            {/* <NavDropdown.Divider /> */}
+                            <NavDropdown.Item href="#action/3.2">Dark</NavDropdown.Item>
+                        </NavDropdown>
                     </Nav>
                     <Nav>
                         <Nav.Link href="#login">Login</Nav.Link>
