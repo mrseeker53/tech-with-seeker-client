@@ -1,10 +1,10 @@
-import { logDOM } from '@testing-library/react';
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../../../images/logo.png';
+import Sidebar from '../Sidebar/Sidebar';
 
 const Header = () => {
     return (
@@ -32,6 +32,9 @@ const Header = () => {
                     <Nav>
                         <Nav.Link href="#login">Login</Nav.Link>
                     </Nav>
+                    <div className='d-lg-none'>
+                        <Sidebar></Sidebar>
+                    </div>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
